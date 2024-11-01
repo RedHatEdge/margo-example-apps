@@ -1,0 +1,42 @@
+---
+apiVersion: margo.org/v1-alpha1
+kind: application
+metadata:
+  id: com-redhatedge-process-control-demo
+  name: Process Control Demo
+  description: A simple process control demo
+  version: 1.0
+  catalog:
+    application:
+      icon: ./resources/topology.png
+      tagline: Example process control application
+      descriptionFile: ./resources/description.md
+      releaseNotes: ./resources/release-notes.md
+      licenseFile: ../../LICENSE
+      site: https://github.com/jjaswanson4/example-apps/tree/main/charts/process-control
+      tags:
+        - "Process Control"
+        - "Kubernetes"
+        - "NodeRED"
+    author:
+      - name: Tim Biernat
+        email: tbiernat@ra.rockwell.com
+      - name: Aaron Neustedter
+        email: ajneuste@rockwellautomation.com
+      - name: Josh Swanson
+        email: jswanson@redhat.com
+    organization:
+      - name: Rockwell Automation
+        site: https://rockwellautomation.com/
+      - name: Red Hat
+        site: https://redhat.com
+deploymentProfiles:
+  - type: helm.v3
+    components:
+      - name: hello-world
+        properties:  
+          repository: https://github.com/jjaswanson4/example-apps/tree/main/charts/process-control
+          revision: 1.0.0
+          wait: true
+parameters: []
+configuration: []
