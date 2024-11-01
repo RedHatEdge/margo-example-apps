@@ -33,7 +33,7 @@ metadata:
 deploymentProfiles:
   - type: helm.v3
     components:
-      - name: hello-world
+      - name: process-control-demo
         properties:  
           repository: https://github.com/jjaswanson4/example-apps/tree/main/charts/process-control
           revision: 1.0.0
